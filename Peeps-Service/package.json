@@ -1,0 +1,19 @@
+{
+  "dependencies": {
+    "express": "^4.17.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  },
+  "name": "peeps-service",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon"
+  },
+  "keywords": [],
+  "author": "ashish karki",
+  "license": "ISC",
+  "description": ""
+}
