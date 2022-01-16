@@ -16,6 +16,22 @@ build:
         manual:
           - src: 'src/**/*.js'
             dest: .
+    - image: ashishkarki007/peep
+      context: Peeps-Service
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: 'src/**/*.js'
+            dest: .
+    - image: ashishkarki007/query
+      context: Query-Service
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: 'src/**/*.js'
+            dest: .
     - image: ashishkarki007/birdsquawks-frontend
       context: birdsquawks-frontend
       docker:

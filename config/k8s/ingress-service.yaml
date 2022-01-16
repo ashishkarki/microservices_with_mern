@@ -10,13 +10,27 @@ spec:
     - host: birdsquawk-app.dev
       http:
         paths:
-          - path: /api/v1/birdsquawk/get
+          - path: /api/v1/birdsquawk
             pathType: Prefix
             backend:
               service:
                 name: birdsquawk-service
                 port:
                   number: 5050
+          - path: /api/v1/peeps/?(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: peep-service
+                port:
+                  number: 5051
+           - path: /api/v1/query
+            pathType: Prefix
+            backend:
+              service:
+                name: query-service
+                port:
+                  number: 5052
           - path: /?(.*)
             pathType: Prefix
             backend:

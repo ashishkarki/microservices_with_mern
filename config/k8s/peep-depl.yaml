@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: peep-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: peep
+  template:
+    metadata:
+      labels:
+        app: peep
+    spec:
+      containers:
+        - name: peep
+          image: ashishkarki007/peep:0.0.1
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: peep-service
+spec:
+  selector:
+    app: peep
+  ports:
+    - name: peep
+      protocol: TCP
+      port: 5051
+      targetPort: 5051
+# spec:
+#   containers:
+#     - name: peep
+#       image: ak007/peeps-service:0.0.1
